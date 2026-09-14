@@ -1,0 +1,1163 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StudySpace - Website Belajar</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5fbf7;
+    color: #26382d;
+}
+
+/* NAVBAR */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
+
+nav {
+    max-width: 1100px;
+    margin: auto;
+    padding: 18px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #28764c;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+nav a {
+    color: #405148;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #28764c;
+}
+
+
+/* HERO */
+
+.hero {
+    max-width: 1100px;
+    min-height: 550px;
+    margin: auto;
+    padding: 70px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero small {
+    color: #39845b;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 50px;
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.hero h1 span {
+    color: #39845b;
+}
+
+.hero p {
+    color: #68776d;
+    line-height: 1.8;
+}
+
+.buttons {
+    margin-top: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 22px;
+    margin-right: 8px;
+
+    border-radius: 12px;
+    text-decoration: none;
+
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.primary {
+    background: #39845b;
+    color: white;
+}
+
+.secondary {
+    background: #dff2e5;
+    color: #39845b;
+}
+
+
+/* HERO CARD */
+
+.hero-card {
+    width: 320px;
+    height: 320px;
+
+    background: #dff2e5;
+    border-radius: 35px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    box-shadow: 0 15px 35px rgba(50,110,70,0.15);
+}
+
+.hero-card .emoji {
+    font-size: 80px;
+}
+
+.hero-card h2 {
+    color: #28764c;
+    margin: 15px 0;
+}
+
+
+/* STATISTICS */
+
+.stats {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.stat {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.stat h2 {
+    color: #39845b;
+    font-size: 30px;
+}
+
+
+/* SECTION */
+
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 25px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 35px;
+    color: #26382d;
+}
+
+.section-title p {
+    color: #39845b;
+    font-weight: bold;
+}
+
+
+/* MATERI */
+
+.materi {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.card .icon {
+    font-size: 45px;
+}
+
+.card h3 {
+    margin: 12px 0;
+}
+
+.card p {
+    color: #68776d;
+    line-height: 1.7;
+}
+
+.card button {
+    margin-top: 15px;
+
+    border: none;
+    background: none;
+
+    color: #39845b;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* PROGRESS */
+
+.progress-section {
+    max-width: 1000px;
+    margin: 50px auto;
+
+    padding: 50px;
+
+    background: #dff2e5;
+    border-radius: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress-circle {
+    width: 150px;
+    height: 150px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-circle span {
+    font-size: 30px;
+    font-weight: bold;
+    color: #39845b;
+}
+
+.progress-bar {
+    width: 250px;
+    height: 10px;
+
+    background: white;
+    border-radius: 20px;
+
+    margin-top: 15px;
+
+    overflow: hidden;
+}
+
+#bar {
+    width: 65%;
+    height: 100%;
+    background: #39845b;
+}
+
+
+/* QUIZ */
+
+.quiz-box {
+    max-width: 700px;
+    margin: auto;
+
+    background: white;
+    padding: 35px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.answer {
+    display: block;
+
+    width: 100%;
+
+    padding: 15px;
+    margin: 10px 0;
+
+    border: 2px solid #e2eee5;
+
+    background: #f7fbf8;
+
+    border-radius: 12px;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.answer:hover {
+    border-color: #39845b;
+}
+
+.correct {
+    background: #d9f4df !important;
+    border-color: #39845b !important;
+}
+
+.wrong {
+    background: #ffdede !important;
+    border-color: #d65b5b !important;
+}
+
+
+/* NOTES */
+
+.notes {
+    max-width: 700px;
+    margin: auto;
+
+    background: white;
+    padding: 30px;
+
+    border-radius: 20px;
+}
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 14px;
+
+    margin-bottom: 15px;
+
+    border: 2px solid #e1eee5;
+
+    border-radius: 10px;
+
+    font-family: Arial;
+}
+
+textarea {
+    height: 150px;
+}
+
+.note {
+    margin-top: 20px;
+
+    padding: 20px;
+
+    background: #eef8f1;
+
+    border-radius: 15px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #28764c;
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:800px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .materi {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .progress-section {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+}
+
+@media(max-width:550px) {
+
+    nav ul {
+        display: none;
+    }
+
+    .materi {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-card {
+        width: 100%;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header>
+
+<nav>
+
+<div class="logo">
+📚 StudySpace
+</div>
+
+<ul>
+
+<li><a href="#home">Beranda</a></li>
+
+<li><a href="#materi">Materi</a></li>
+
+<li><a href="#kuis">Kuis</a></li>
+
+<li><a href="#catatan">Catatan</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<!-- HERO -->
+
+<div class="hero" id="home">
+
+<div class="hero-text">
+
+<small>✨ SELAMAT DATANG DI STUDYSPACE</small>
+
+<h1>
+Belajar Lebih Mudah,
+<span>Meraih Masa Depan.</span>
+</h1>
+
+<p>
+StudySpace adalah tempat belajar digital sederhana
+untuk membantu pelajar memahami materi,
+mengerjakan kuis, dan mencatat pelajaran.
+</p>
+
+<div class="buttons">
+
+<a href="#materi" class="btn primary">
+Mulai Belajar 📖
+</a>
+
+<a href="#kuis" class="btn secondary">
+Coba Kuis ✏️
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-card">
+
+<div class="emoji">
+📚
+</div>
+
+<h2>
+Semangat Belajar!
+</h2>
+
+<p>
+Belajar hari ini untuk masa depan yang lebih baik.
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- STATISTIK -->
+
+<div class="stats">
+
+<div class="stat">
+<h2>12+</h2>
+<p>Materi</p>
+</div>
+
+<div class="stat">
+<h2>50+</h2>
+<p>Soal</p>
+</div>
+
+<div class="stat">
+<h2>5</h2>
+<p>Mata Pelajaran</p>
+</div>
+
+<div class="stat">
+<h2>100%</h2>
+<p>Semangat</p>
+</div>
+
+</div>
+
+
+
+<!-- MATERI -->
+
+<section id="materi">
+
+<div class="section-title">
+
+<p>📚 PEMBELAJARAN</p>
+
+<h2>
+Materi Pilihan
+</h2>
+
+</div>
+
+
+<div class="materi">
+
+
+<div class="card">
+
+<div class="icon">
+🧬
+</div>
+
+<h3>
+Biologi
+</h3>
+
+<p>
+Pelajari sel, genetika, metabolisme,
+ekologi, dan sistem organ.
+</p>
+
+<button onclick="materi('Biologi')">
+Lihat Materi →
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">
+🔢
+</div>
+
+<h3>
+Matematika
+</h3>
+
+<p>
+Pelajari aljabar, fungsi, peluang,
+statistika, dan geometri.
+</p>
+
+<button onclick="materi('Matematika')">
+Lihat Materi →
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">
+🇬🇧
+</div>
+
+<h3>
+Bahasa Inggris
+</h3>
+
+<p>
+Pelajari grammar, vocabulary,
+descriptive text, dan narrative text.
+</p>
+
+<button onclick="materi('Bahasa Inggris')">
+Lihat Materi →
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">
+🕌
+</div>
+
+<h3>
+Bahasa Arab
+</h3>
+
+<p>
+Pelajari mufradat, nahwu, sharaf,
+dan pemahaman teks Arab.
+</p>
+
+<button onclick="materi('Bahasa Arab')">
+Lihat Materi →
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">
+💻
+</div>
+
+<h3>
+Informatika
+</h3>
+
+<p>
+Pelajari AI, IoT, Big Data,
+algoritma, dan teknologi digital.
+</p>
+
+<button onclick="materi('Informatika')">
+Lihat Materi →
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">
+📖
+</div>
+
+<h3>
+Al-Qur'an
+</h3>
+
+<p>
+Pelajari hafalan, murajaah,
+tafsir, dan ilmu Al-Qur'an.
+</p>
+
+<button onclick="materi('Al-Qur’an')">
+Lihat Materi →
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- PROGRESS -->
+
+<div class="progress-section">
+
+<div>
+
+<p>
+📈 PROGRESS BELAJAR
+</p>
+
+<h2>
+Terus Tingkatkan Kemampuanmu!
+</h2>
+
+<p>
+Konsisten belajar sedikit setiap hari
+akan menghasilkan perubahan besar.
+</p>
+
+<br>
+
+<button
+class="btn primary"
+onclick="progress()">
+
+Selesaikan Materi ✓
+
+</button>
+
+</div>
+
+
+<div>
+
+<div class="progress-circle">
+
+<span id="progressNumber">
+65%
+</span>
+
+</div>
+
+<p style="text-align:center;">
+Progress Belajar
+</p>
+
+<div class="progress-bar">
+
+<div id="bar"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- KUIS -->
+
+<section id="kuis">
+
+<div class="section-title">
+
+<p>✏️ UJI KEMAMPUAN</p>
+
+<h2>
+Kuis Singkat
+</h2>
+
+</div>
+
+
+<div class="quiz-box">
+
+<h3 id="question">
+Apa organ utama tempat terjadinya fotosintesis?
+</h3>
+
+
+<button class="answer"
+onclick="jawab(this,false)">
+A. Akar
+</button>
+
+<button class="answer"
+onclick="jawab(this,true)">
+B. Daun
+</button>
+
+<button class="answer"
+onclick="jawab(this,false)">
+C. Batang
+</button>
+
+<button class="answer"
+onclick="jawab(this,false)">
+D. Bunga
+</button>
+
+
+<p id="hasil"></p>
+
+<br>
+
+<button
+class="btn primary"
+onclick="soalBerikutnya()">
+
+Soal Berikutnya →
+
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- CATATAN -->
+
+<section id="catatan">
+
+<div class="section-title">
+
+<p>📝 CATATAN</p>
+
+<h2>
+Catatan Belajar
+</h2>
+
+</div>
+
+
+<div class="notes">
+
+<input
+id="judul"
+placeholder="Judul catatan..."
+>
+
+<textarea
+id="isi"
+placeholder="Tulis catatanmu di sini..."
+></textarea>
+
+<button
+class="btn primary"
+onclick="simpanCatatan()">
+
+Simpan Catatan 💾
+
+</button>
+
+
+<div id="notesContainer"></div>
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 StudySpace
+</p>
+
+<p>
+Belajar • Berkembang • Berprestasi 💚
+</p>
+
+</footer>
+
+
+
+<script>
+
+
+/* MATERI */
+
+function materi(nama) {
+
+alert(
+"📚 Materi " + nama +
+" akan segera tersedia!"
+);
+
+}
+
+
+/* PROGRESS */
+
+let nilaiProgress = 65;
+
+function progress() {
+
+nilaiProgress += 5;
+
+if(nilaiProgress > 100) {
+nilaiProgress = 100;
+}
+
+document.getElementById(
+"progressNumber"
+).innerText = nilaiProgress + "%";
+
+document.getElementById(
+"bar"
+).style.width = nilaiProgress + "%";
+
+if(nilaiProgress === 100) {
+
+alert(
+"🎉 Selamat! Progress belajar kamu sudah 100%!"
+);
+
+}
+
+}
+
+
+/* QUIZ */
+
+let soal = 0;
+
+let benar = false;
+
+
+function jawab(button,jawaban) {
+
+if(benar) return;
+
+benar = true;
+
+if(jawaban) {
+
+button.classList.add("correct");
+
+document.getElementById(
+"hasil"
+).innerText =
+"🎉 Benar! Jawaban kamu tepat.";
+
+}
+
+else {
+
+button.classList.add("wrong");
+
+document.getElementById(
+"hasil"
+).innerText =
+"❌ Salah. Coba lebih teliti.";
+
+}
+
+}
+
+
+function soalBerikutnya() {
+
+soal++;
+
+benar = false;
+
+let question =
+document.getElementById("question");
+
+let answers =
+document.querySelectorAll(".answer");
+
+answers.forEach(
+function(button) {
+
+button.classList.remove("correct");
+button.classList.remove("wrong");
+
+}
+);
+
+
+if(soal === 1) {
+
+question.innerText =
+"Planet yang dikenal sebagai Planet Merah adalah...?";
+
+answers[0].innerText = "A. Venus";
+answers[1].innerText = "B. Jupiter";
+answers[2].innerText = "C. Mars";
+answers[3].innerText = "D. Saturnus";
+
+answers[0].onclick =
+function(){ jawab(this,false); };
+
+answers[1].onclick =
+function(){ jawab(this,false); };
+
+answers[2].onclick =
+function(){ jawab(this,true); };
+
+answers[3].onclick =
+function(){ jawab(this,false); };
+
+}
+
+else if(soal === 2) {
+
+question.innerText =
+"Kepanjangan dari AI adalah...?";
+
+answers[0].innerText =
+"A. Automatic Internet";
+
+answers[1].innerText =
+"B. Artificial Intelligence";
+
+answers[2].innerText =
+"C. Advanced Information";
+
+answers[3].innerText =
+"D. Application Interface";
+
+answers[0].onclick =
+function(){ jawab(this,false); };
+
+answers[1].onclick =
+function(){ jawab(this,true); };
+
+answers[2].onclick =
+function(){ jawab(this,false); };
+
+answers[3].onclick =
+function(){ jawab(this,false); };
+
+}
+
+else {
+
+question.innerText =
+"🎉 Kuis Selesai!";
+
+answers.forEach(
+function(button){
+button.style.display = "none";
+});
+
+document.getElementById(
+"hasil"
+).innerText =
+"Hebat! Kamu sudah menyelesaikan kuis.";
+
+}
+
+}
+
+
+/* CATATAN */
+
+function simpanCatatan() {
+
+let judul =
+document.getElementById("judul").value;
+
+let isi =
+document.getElementById("isi").value;
+
+
+if(judul === "" || isi === "") {
+
+alert(
+"⚠️ Isi judul dan catatan terlebih dahulu."
+);
+
+return;
+
+}
+
+
+let note =
+document.createElement("div");
+
+note.className = "note";
+
+
+note.innerHTML =
+
+"<h3>📌 " +
+judul +
+"</h3>" +
+
+"<p>" +
+isi +
+"</p>";
+
+
+document.getElementById(
+"notesContainer"
+).appendChild(note);
+
+
+document.getElementById("judul").value = "";
+
+document.getElementById("isi").value = "";
+
+
+alert(
+"✅ Catatan berhasil disimpan!"
+);
+
+}
+
+</script>
+
+
+</body>
+</html>
+```
